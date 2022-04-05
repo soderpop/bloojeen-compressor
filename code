@@ -16,7 +16,7 @@ img = Image.new('RGB', (8, len(value)//8), "white")
 img.putdata(data)
 img.show()  
 
-picture = img.save("binary.jpg")
+img.save("binary.jpg")
 
 
 x_orig = imageio.imread('binary.jpg', pilmode='L') # read in grayscale
