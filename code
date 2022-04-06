@@ -6,10 +6,10 @@ import scipy.ndimage as spimg
 import imageio
 import PIL
 
-value = "0110100001100101011011000110110001101111"
+value = "10101010101010101001011110010101001010100101010100001010101011010111011110101010010100101010101111100100"
 
 cmap = {'0': (255,255,255),
-         '1': (0,0,0)}
+        '1': (0,0,0)}
 
 data = [cmap[letter] for letter in value]
 img = Image.new('RGB', (8, len(value)//8), "white")
@@ -20,7 +20,7 @@ img.save("binary.jpg")
 
 
 x_orig = imageio.imread('binary.jpg', pilmode='L') # read in grayscale
-x = spimg.zoom(x_orig, 0.2)
+x = spimg.zoom(x_orig, -1)
 ny,nx = x.shape
 
 k = round(nx * ny * 0.5)
