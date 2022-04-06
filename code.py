@@ -5,9 +5,44 @@ import scipy.fftpack as spfft
 import scipy.ndimage as spimg
 import imageio
 import PIL
+# Python program for random
+# binary string generation
 
-value = "10101010101010101001011110010101001010100101010100001010101011010111011110101010010100101010101111100100"
 
+import random
+
+
+# Function to create the
+# random binary string
+def rand_key(p):
+
+	# Variable to store the
+	# string
+	key1 = ""
+
+	# Loop to find the string
+	# of desired length
+	for i in range(p):
+		
+		# randint function to generate
+		# 0, 1 randomly and converting
+		# the result into str
+		temp = str(random.randint(0, 1))
+
+		# Concatenation the random 0, 1
+		# to the final result
+		key1 += temp
+		
+	return(key1)
+
+# Driver Code
+n = 7
+str1 = rand_key(n)
+print("Desired length random binary string is: ", str1)
+
+
+
+value = str1
 cmap = {'0': (255,255,255),
         '1': (0,0,0)}
 
